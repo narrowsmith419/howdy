@@ -1,4 +1,7 @@
 <?php
+//turn on error reporting
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 
 //require auto-load function
 require_once('vendor/autoload.php');
@@ -7,9 +10,12 @@ require_once('vendor/autoload.php');
 $f3 = Base::instance();
 
 //define default route
-$f3->route('GET /',function(){
-    echo "<h1>Sup World</h1>";
-});
+/*$f3->route('GET /',function(){
+    //echo "<h1>Sup World</h1>";
+    $view = new Template();
+    echo $view->render('views/home.html');
+
+});*/
 
 $view = new Template();
 echo $view->render('views/home.html');
